@@ -1,0 +1,131 @@
+{
+  "name": "dennis",
+  "displayName": "D.E.N.N.I.S.",
+  "description": "Directory Exclusion for No-Nonsense Individual Screening. Muestra solo los archivos relevantes segun el espacio de trabajo activo (analitica, auth, pagos, etc).",
+  "version": "0.0.1",
+  "publisher": "palmex",
+  "license": "MIT",
+  "icon": "resources/marketplace-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PalmaLuis/D.E.N.N.I.S.git"
+  },
+  "keywords": [
+    "explorer",
+    "files",
+    "workspace",
+    "focus",
+    "productivity"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fileModesContainer",
+          "title": "D.E.N.N.I.S.",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "fileModesContainer": [
+        {
+          "id": "fileModesView",
+          "name": "D.E.N.N.I.S. ",
+          "contextualTitle": "D.E.N.N.I.S."
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "fileModes.selectMode",
+        "title": "Seleccionar espacio",
+        "category": "D.E.N.N.I.S.",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "fileModes.createMode",
+        "title": "Crear nuevo espacio",
+        "category": "D.E.N.N.I.S.",
+        "icon": "$(add)"
+      },
+      {
+        "command": "fileModes.addToMode",
+        "title": "Agregar a espacio...",
+        "category": "D.E.N.N.I.S."
+      },
+      {
+        "command": "fileModes.removeFromMode",
+        "title": "Quitar de este espacio",
+        "category": "D.E.N.N.I.S."
+      },
+      {
+        "command": "fileModes.refresh",
+        "title": "Refrescar",
+        "category": "D.E.N.N.I.S.",
+        "icon": "$(refresh)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "fileModes.addToMode",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "editorTextFocus || explorerViewletFocus"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "fileModes.selectMode",
+          "when": "view == fileModesView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "fileModes.createMode",
+          "when": "view == fileModesView",
+          "group": "navigation@2"
+        },
+        {
+          "command": "fileModes.refresh",
+          "when": "view == fileModesView",
+          "group": "navigation@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "fileModes.addToMode",
+          "group": "7_modification"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "fileModes.addToMode",
+          "group": "7_modification"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "fileModes.removeFromMode",
+          "when": "view == fileModesView && viewItem == fileModesEntry",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "echo \"(sin lint configurado todavia)\""
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^4.0.0"
+  }
+}
