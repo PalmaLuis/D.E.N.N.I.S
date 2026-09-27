@@ -2,7 +2,7 @@
   "name": "dennis-filse-spaces",
   "displayName": "D.E.N.N.I.S. file spaces",
   "description": "Directory Exclusion for No-Nonsense Individual Screening. Muestra solo los archivos relevantes segun el espacio de trabajo activo (analitica, auth, pagos, etc).",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "palmex",
   "license": "MIT",
   "icon": "resources/marketplace-icon.png",

@@ -6,18 +6,6 @@ Extensión de VSCode que muestra, en un panel lateral propio, **solo los
 archivos que necesitas para el "espacio" en el que estás trabajando**
 (test, auth, pagos, etc), en vez de todo el árbol del proyecto.
 
-## Cómo probarla (sin publicarla todavía)
-
-1. Abre esta carpeta en VSCode.
-2. Ejecuta `npm install` (instala solo los tipos de VSCode, no hay
-   dependencias de runtime).
-3. Presiona `F5`. Esto abre una segunda ventana de VSCode
-   ("Extension Development Host") con la extensión ya cargada.
-4. En esa segunda ventana, abre CUALQUIER carpeta de proyecto real
-   (la tuya, donde tienes `src/pages/pagePanel`, etc).
-5. En la barra de actividad (el margen izquierdo con íconos) verás un
-   nuevo ícono de "D.E.N.N.I.S.". Ábrelo.
-
 ## Flujo de uso
 
 Hay **3 formas** de agregar un archivo a un espacio:
